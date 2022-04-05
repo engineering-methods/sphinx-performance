@@ -54,11 +54,11 @@ class ProjectEnv:
         self.extra_info = {}
 
         # Some path checks
-        if not os.path.exists(self.pip_path):
-            raise FileNotFoundError(f'Could not found "pip" in calculated path: {self.pip_path}')
+        #if not os.path.exists(self.pip_path):
+        #    raise FileNotFoundError(f'Could not found "pip" in calculated path: {self.pip_path}')
 
-        if not os.path.exists(self.sphinx_path):
-            raise FileNotFoundError(f'Could not found "sphinx-build" in calculated path: {self.sphinx_path}')
+        #if not os.path.exists(self.sphinx_path):
+        #    raise FileNotFoundError(f'Could not found "sphinx-build" in calculated path: {self.sphinx_path}')
 
     def config_is_valid(self) -> bool:
         if not os.path.exists(self.source_perf_conf_path):
@@ -252,7 +252,7 @@ class ProjectEnv:
         return data
 
     def install_dependencies(self):
-        dep_command = [self.pip_path, "install", "-r", self.target_req_path]
+        dep_command = ["pip", "install", "-r", self.target_req_path]
         start_time = time.time()
 
         if self.build_config['debug']:
