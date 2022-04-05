@@ -274,7 +274,7 @@ class ProjectEnv:
             self.build_config['keep'] = True
 
         params = [
-            self.sphinx_path,
+            "sphinx-build",
             "-a",
             "-E",
             "-v",
